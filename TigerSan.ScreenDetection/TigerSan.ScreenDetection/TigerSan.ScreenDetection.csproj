@@ -1,0 +1,49 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <Title>$(AssemblyName)</Title>
+    <Version>1.0.0</Version>
+    <Authors>TigerSan</Authors>
+    <Company></Company>
+    <Description>A C# class library for getting screen information.</Description>
+    <Copyright>bilibili 真的虎子君</Copyright>
+    <PackageIcon>logo.png</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageProjectUrl>https://github.com/huzijun01</PackageProjectUrl>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Resource Include="Files\LICENSE">
+      <PackagePath>\</PackagePath>
+      <Pack>True</Pack>
+    </Resource>
+    <Resource Include="Files\logo.png">
+      <PackagePath>\</PackagePath>
+      <Pack>True</Pack>
+    </Resource>
+    <Resource Include="Files\README.md">
+      <PackagePath>\</PackagePath>
+      <Pack>True</Pack>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Files\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Update="Files\logo.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Update="Files\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>

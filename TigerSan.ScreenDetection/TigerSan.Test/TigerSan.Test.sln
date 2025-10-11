@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36310.24 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TigerSan.Test", "TigerSan.Test\TigerSan.Test.csproj", "{3EF5FC8F-A4EA-4AF7-A09D-2A944AEBAFBD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TigerSan.Test.Assets", "TigerSan.Test.Assets\TigerSan.Test.Assets.csproj", "{BE4C2317-3315-4758-A13B-9AC36DCAF528}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3EF5FC8F-A4EA-4AF7-A09D-2A944AEBAFBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EF5FC8F-A4EA-4AF7-A09D-2A944AEBAFBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EF5FC8F-A4EA-4AF7-A09D-2A944AEBAFBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EF5FC8F-A4EA-4AF7-A09D-2A944AEBAFBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE4C2317-3315-4758-A13B-9AC36DCAF528}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE4C2317-3315-4758-A13B-9AC36DCAF528}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE4C2317-3315-4758-A13B-9AC36DCAF528}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE4C2317-3315-4758-A13B-9AC36DCAF528}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F13148C5-F78A-487A-AEDC-65FD9FC98051}
+	EndGlobalSection
+EndGlobal

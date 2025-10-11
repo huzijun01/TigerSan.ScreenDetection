@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35931.197
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TigerSan.Test", "TigerSan.Test\TigerSan.Test\TigerSan.Test.csproj", "{5ABA231F-AD42-6965-D64B-E5E4B6AF28D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TigerSan.ScreenDetection", "TigerSan.ScreenDetection\TigerSan.ScreenDetection.csproj", "{58353DAC-CEC4-DED1-A157-C535EFA0061D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5ABA231F-AD42-6965-D64B-E5E4B6AF28D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5ABA231F-AD42-6965-D64B-E5E4B6AF28D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5ABA231F-AD42-6965-D64B-E5E4B6AF28D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5ABA231F-AD42-6965-D64B-E5E4B6AF28D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58353DAC-CEC4-DED1-A157-C535EFA0061D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58353DAC-CEC4-DED1-A157-C535EFA0061D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58353DAC-CEC4-DED1-A157-C535EFA0061D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58353DAC-CEC4-DED1-A157-C535EFA0061D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E4FB9628-07EA-461E-974F-98BA8D888411}
+	EndGlobalSection
+EndGlobal
