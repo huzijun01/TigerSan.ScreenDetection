@@ -255,6 +255,15 @@
         public Point2D pRB;
         #endregion 【Fields】
 
+        #region 【Properties】
+        public double Width { get => pRB.X - pLT.X; }
+        public double Height { get => pRB.Y - pLT.Y; }
+        public double Top { get => pLT.Y; }
+        public double Bottom { get => pRB.Y; }
+        public double Left { get => pLT.X; }
+        public double Right { get => pRB.X; }
+        #endregion 【Properties】
+
         #region 【Ctor】
         public Rectangle2D()
         {
@@ -264,6 +273,14 @@
             pRB = new Point2D();
         }
 
+        public Rectangle2D(Point2D position, double width, double height)
+        {
+            pLT = new Point2D(position.X, position.Y);
+            pRT = new Point2D(position.X + width, position.Y);
+            pLB = new Point2D(position.X, position.Y + height);
+            pRB = new Point2D(position.X + width, position.Y + height);
+        }
+
         public Rectangle2D(Point2D p2dLT, Point2D p2dRT, Point2D p2dLB, Point2D p2dRB)
         {
             pLT = p2dLT;
@@ -271,6 +288,7 @@
             pLB = p2dLB;
             pRB = p2dRB;
         }
+
         public Rectangle2D(Rectangle2D rect)
         {
             pLT = new Point2D(rect.pLT);
@@ -278,6 +296,7 @@
             pLB = new Point2D(rect.pLB);
             pRB = new Point2D(rect.pRB);
         }
+
         public Rectangle2D(double Left, double Top, double Height, double Width)
         {
             pLT = new Point2D(Left, Top);
@@ -549,6 +568,54 @@
             {
                 rect.Shrink(offsetX, offsetY);
             }
+        }
+        #endregion
+
+        #region 顶部
+        /// <summary>
+        /// 顶部
+        /// </summary>
+        public void ToTop(Rectangle2D rect)
+        {
+            Add(
+                rect.Left,
+                rect.Top - Height);
+        }
+        #endregion
+
+        #region 底部
+        /// <summary>
+        /// 底部
+        /// </summary>
+        public void ToBottom(Rectangle2D rect)
+        {
+            Add(
+                rect.Left,
+                rect.Top + rect.Height);
+        }
+        #endregion
+
+        #region 左侧
+        /// <summary>
+        /// 左侧
+        /// </summary>
+        public void ToLeft(Rectangle2D rect)
+        {
+            Add(
+                rect.Left - Width,
+                rect.Top + rect.Height / 2 - Height / 2);
+        }
+        #endregion
+
+        #region 右侧
+        /// <summary>
+        /// 右侧
+        /// </summary>
+        public void ToRight(Rectangle2D rect)
+        {
+            Add(
+                rect.Left + rect.Width,
+                rect.Top + rect.Height / 2 - Height / 2);
         }
         #endregion
 
