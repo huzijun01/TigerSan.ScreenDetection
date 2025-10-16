@@ -23,3 +23,5 @@ A C# class library for getting screen information.
 `GetDpiScale`:
 
 `GetIndexOfScreen`:
+
+`GetScreenPosition`:

@@ -5,7 +5,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <Title>$(AssemblyName)</Title>
-    <Version>1.0.0</Version>
+    <Version>1.0.1</Version>
     <Authors>TigerSan</Authors>
     <Company></Company>
     <Description>A C# class library for getting screen information.</Description>
@@ -17,6 +17,27 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="DLL\PresentationCore.dll" />
+    <None Remove="DLL\PresentationFramework.dll" />
+    <None Remove="DLL\WindowsBase.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="PresentationCore">
+      <HintPath>DLL\PresentationCore.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <HintPath>DLL\PresentationFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase">
+      <HintPath>DLL\WindowsBase.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="DLL\PresentationCore.dll" />
+    <Resource Include="DLL\PresentationFramework.dll" />
+    <Resource Include="DLL\WindowsBase.dll" />
     <Resource Include="Files\LICENSE">
       <PackagePath>\</PackagePath>
       <Pack>True</Pack>

@@ -9,6 +9,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="DLL\System.Windows.Forms.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Prism.Unity" Version="9.0.537" />
     <PackageReference Include="TigerSan.CsvLog" Version="1.2.0" />
     <PackageReference Include="TigerSan.KeyboardMouseHook" Version="1.1.4" />
@@ -21,7 +25,7 @@
 
   <ItemGroup>
     <Reference Include="System.Windows.Forms">
-      <HintPath>..\..\TigerSan.ScreenDetection\DLL\System.Windows.Forms.dll</HintPath>
+      <HintPath>DLL\System.Windows.Forms.dll</HintPath>
     </Reference>
   </ItemGroup>
 

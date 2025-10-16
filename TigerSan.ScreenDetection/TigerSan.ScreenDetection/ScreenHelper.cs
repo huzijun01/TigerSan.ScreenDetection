@@ -1,4 +1,6 @@
 ﻿using System.Drawing;
+using System.Windows;
+using System.Windows.Controls;
 using System.Runtime.InteropServices;
 using TigerSan.ScreenDetection.Models;
 
@@ -235,6 +237,57 @@ namespace TigerSan.ScreenDetection
                 }
             }
             return -1;
+        }
+        #endregion
+
+        #region 获取控件相对于屏幕的位置
+        /// <summary>
+        /// 获取控件相对于屏幕的位置
+        /// </summary>
+        public static Point2D? GetScreenPosition(Control control)
+        {
+            var strError = "The screen position of the control cannot be obtained!";
+
+            if (control == null)
+            {
+                Console.WriteLine($"The {nameof(control)} is null!");
+                return null;
+            }
+
+            if (!control.IsLoaded)
+            {
+                return null;
+            }
+
+            // 获取屏幕坐标：
+            try
+            {
+                var window = Window.GetWindow(control);
+                if (window != null)
+                {
+                    // 正确获取窗口在屏幕中的位置：
+                    var windowLeft = window.Left;
+                    var windowTop = window.Top;
+
+                    // 获取控件在窗口中的位置：
+                    var elementInWindow = control.TransformToVisual(window)
+                                         .Transform(new System.Windows.Point(0, 0));
+
+                    // 计算屏幕绝对坐标：
+                    return new Point2D(
+                        windowLeft + elementInWindow.X,
+                        windowTop + elementInWindow.Y
+                    );
+                }
+
+                Console.WriteLine(strError);
+                return null;
+            }
+            catch
+            {
+                Console.WriteLine(strError);
+                return null;
+            }
         }
         #endregion
         #endregion 【Functions】
