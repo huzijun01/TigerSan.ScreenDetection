@@ -12,11 +12,16 @@
         #endregion 【Fields】
 
         #region 【Ctor】
-        public Point2D(double x = 0, double y = 0)
+        public Point2D()
+        {
+        }
+
+        public Point2D(double x, double y)
         {
             X = x;
             Y = y;
         }
+
         public Point2D(Point2D p)
         {
             X = p.X;
@@ -134,6 +139,12 @@
         #endregion 【Fields】
 
         #region 【Ctor】
+        public Line2D()
+        {
+            point1 = new Point2D();
+            point2 = new Point2D();
+        }
+
         public Line2D(Point2D p1, Point2D p2)
         {
             point1 = new Point2D(p1);
@@ -245,6 +256,14 @@
         #endregion 【Fields】
 
         #region 【Ctor】
+        public Rectangle2D()
+        {
+            pLT = new Point2D();
+            pRT = new Point2D();
+            pLB = new Point2D();
+            pRB = new Point2D();
+        }
+
         public Rectangle2D(Point2D p2dLT, Point2D p2dRT, Point2D p2dLB, Point2D p2dRB)
         {
             pLT = p2dLT;
@@ -651,6 +670,11 @@
         #endregion 【Fields】
 
         #region 【Ctor】
+        public Matrix2D()
+        {
+            Rows = new List<List<Point2D>>();
+        }
+
         public Matrix2D(List<Point2D> points, int iRows, int iCols)
         {
             rows = iRows;
@@ -667,6 +691,7 @@
                 Rows.Add(ps);
             }
         }
+
         public Matrix2D(int iRows, int iCols)
         {
             rows = iRows;
