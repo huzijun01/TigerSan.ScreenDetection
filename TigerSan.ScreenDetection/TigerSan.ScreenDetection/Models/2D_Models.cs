@@ -365,14 +365,14 @@
         /// </summary>
         public void Sub(double x, double y)
         {
-            pLT.X += x;
-            pLT.Y += y;
-            pRT.X += x;
-            pRT.Y += y;
-            pLB.X += x;
-            pLB.Y += y;
-            pRB.X += x;
-            pRB.Y += y;
+            pLT.X -= x;
+            pLT.Y -= y;
+            pRT.X -= x;
+            pRT.Y -= y;
+            pLB.X -= x;
+            pLB.Y -= y;
+            pRB.X -= x;
+            pRB.Y -= y;
         }
 
         /// <summary>
@@ -571,12 +571,23 @@
         }
         #endregion
 
+        #region 原点
+        /// <summary>
+        /// 原点
+        /// </summary>
+        public void ToOrigin()
+        {
+            Sub(pLT.X, pLT.Y);
+        }
+        #endregion
+
         #region 顶部
         /// <summary>
         /// 顶部
         /// </summary>
         public void ToTop(Rectangle2D rect)
         {
+            ToOrigin();
             Add(
                 rect.Left,
                 rect.Top - Height);
@@ -589,6 +600,7 @@
         /// </summary>
         public void ToBottom(Rectangle2D rect)
         {
+            ToOrigin();
             Add(
                 rect.Left,
                 rect.Top + rect.Height);
@@ -601,6 +613,7 @@
         /// </summary>
         public void ToLeft(Rectangle2D rect)
         {
+            ToOrigin();
             Add(
                 rect.Left - Width,
                 rect.Top + rect.Height / 2 - Height / 2);
@@ -613,6 +626,7 @@
         /// </summary>
         public void ToRight(Rectangle2D rect)
         {
+            ToOrigin();
             Add(
                 rect.Left + rect.Width,
                 rect.Top + rect.Height / 2 - Height / 2);
@@ -679,8 +693,19 @@
         /// </summary>
         public bool IsIn(Point2D point)
         {
-            return point.X >= pLT.X && point.X <= pRB.X
-            && point.Y >= pLT.Y && point.Y <= pRB.Y;
+            return point.X >= pLT.X && point.Y >= pLT.Y
+                && point.X <= pRB.X && point.Y <= pRB.Y;
+        }
+        #endregion
+
+        #region 判断“坐标”是否在“矩形”中
+        /// <summary>
+        /// 判断“坐标”是否在“矩形”中
+        /// </summary>
+        public bool IsIn(double x, double y)
+        {
+            return x >= pLT.X && y >= pLT.Y
+                && x <= pRB.X && y <= pRB.Y;
         }
         #endregion
 

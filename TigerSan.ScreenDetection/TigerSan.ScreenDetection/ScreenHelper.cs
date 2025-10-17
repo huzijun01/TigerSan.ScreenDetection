@@ -215,14 +215,14 @@ namespace TigerSan.ScreenDetection
         }
         #endregion
 
-        #region 获取点所在那块屏幕的序号
+        #region 获取“点”所在屏幕的序号
         /// <summary>
-        /// 获取点所在屏幕的序号
+        /// 获取“点”所在屏幕的序号
         /// </summary>
-        /// <param name="pMouse">鼠标坐标</param>
+        /// <param name="point">点</param>
         /// <param name="expend">扩大量</param>
         /// <returns>屏幕序号</returns>
-        public static int GetIndexOfScreen(Point2D pMouse, double expend = 0)
+        public static int GetIndexOfScreen(Point2D point, double expend = 0)
         {
             var screenInfos = GetScreenInfos();
 
@@ -231,12 +231,74 @@ namespace TigerSan.ScreenDetection
                 var screenInfo = screenInfos[i];
                 screenInfo.BoundRect.Expand(expend);
 
-                if (screenInfo.BoundRect.IsIn(pMouse))
+                if (screenInfo.BoundRect.IsIn(point))
                 {
                     return i;
                 }
             }
             return -1;
+        }
+        #endregion
+
+        #region 获取“坐标”所在屏幕的序号
+        /// <summary>
+        /// 获取“坐标”所在屏幕的序号
+        /// </summary>
+        /// <param name="x">横坐标</param>
+        /// <param name="y">纵坐标</param>
+        /// <param name="expend">扩大量</param>
+        /// <returns>屏幕序号</returns>
+        public static int GetIndexOfScreen(double x, double y, double expend = 0)
+        {
+            var screenInfos = GetScreenInfos();
+
+            for (int i = 0; i < screenInfos.Count; i++)
+            {
+                var screenInfo = screenInfos[i];
+                screenInfo.BoundRect.Expand(expend);
+
+                if (screenInfo.BoundRect.IsIn(x, y))
+                {
+                    return i;
+                }
+            }
+            return -1;
+        }
+        #endregion
+
+        #region 获取“矩形”所在屏幕的序号
+        /// <summary>
+        /// 获取“矩形”所在屏幕的序号
+        /// </summary>
+        /// <param name="rect">矩形</param>
+        /// <param name="expend">扩大量</param>
+        /// <returns>屏幕序号</returns>
+        public static int GetIndexOfScreen(Rectangle2D rect, double expend = 0)
+        {
+            var screenInfos = GetScreenInfos();
+
+            // 左上：
+            var screenIndex = GetIndexOfScreen(new Point2D(rect.pLT), expend);
+
+            // 右上：
+            if (screenIndex < 0)
+            {
+                screenIndex = GetIndexOfScreen(new Point2D(rect.pRT), expend);
+            }
+
+            // 左下：
+            if (screenIndex < 0)
+            {
+                screenIndex = GetIndexOfScreen(new Point2D(rect.pLB), expend);
+            }
+
+            // 右下：
+            if (screenIndex < 0)
+            {
+                screenIndex = GetIndexOfScreen(new Point2D(rect.pRB), expend);
+            }
+
+            return screenIndex;
         }
         #endregion
 

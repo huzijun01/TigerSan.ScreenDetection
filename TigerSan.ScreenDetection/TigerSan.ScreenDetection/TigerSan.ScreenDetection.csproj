@@ -5,7 +5,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <Title>$(AssemblyName)</Title>
-    <Version>1.0.3</Version>
+    <Version>1.0.4</Version>
     <Authors>TigerSan</Authors>
     <Company></Company>
     <Description>A C# class library for getting screen information.</Description>
